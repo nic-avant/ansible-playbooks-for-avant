@@ -1,0 +1,26 @@
+- name: Clone GitHub Repositories
+  hosts: localhost
+  become: false
+  vars:
+    repositories:
+      - name: airflow-eks-partner01-dev
+        url: https://github.com/AvantFinCo/airflow-eks-partner01-dev.git
+      - name: avant-data-common-tasks
+        url: https://github.com/AvantFinCo/avant-data-common-tasks.git
+      - name: avant-data-commons
+        url: https://github.com/AvantFinCo/avant-data-commons.git
+      - name: data-dag-tools
+        url: https://github.com/AvantFinCo/data-dag-tools.git
+      - name: data-pipeline-note
+        url: https://github.com/AvantFinCo/data-pipeline-note.git
+      - name: dlds-applications-dlds-datasets
+        url: https://github.com/AvantFinCo/ads-applications-dlds-datasets.git
+  tasks:
+    - name: Clone repositories
+      git:
+        repo: "{{ item.url }}"
+        dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
+        clone: yes
+        depth: 1
+        recursive: no
+      loop: "{{ repositories }}"
