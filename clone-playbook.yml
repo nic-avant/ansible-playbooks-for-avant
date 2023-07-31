@@ -4,6 +4,11 @@
     base_url: "https://github.com/AvantFinCo/"
     repositories:
       - name: avant-campaign
+      - name: ads-dlds-campaign-airflow
+      - name: campaign-common-utils
+      - name: avant-global-campaign
+      - name: ads-applications-campaign-liquibase
+      - name: Avant-Campaign-Management
       - name: avant-basic
       - name: mle-training
       - name: avant-basic-ecosystem-releases
