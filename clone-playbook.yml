@@ -41,7 +41,7 @@
   tasks:
     - name: Clone Repositories
       git:
-        repo: "{{ base_url + item.name }}"
+        repo: "{{ base_url + item.name }}.git"
         dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
         clone: yes
         depth: 1
