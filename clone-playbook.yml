@@ -4,46 +4,47 @@
     base_url: "https://github.com/AvantFinCo/"
     repositories:
       - name: avant-campaign
-      - name: ads-dlds-campaign-airflow
-      - name: campaign-common-utils
-      - name: avant-global-campaign
-      - name: ads-applications-campaign-liquibase
-      - name: Avant-Campaign-Management
-      - name: avant-basic
-      - name: mle-training
-      - name: avant-basic-ecosystem-releases
-      - name: data-management
-      - name: data-collections
-      - name: amount-credit-card-api
-      - name: accounting-garden
-      - name: amount-fdr_gateway
-      - name: tapestry
-      - name: avant_garden_risk_decisioning
-      - name: core-ledger
-      - name: ab_actions
-      - name: avant-api-stubs
-      - name: risk-ops
-      - name: partners-modules
-      - name: account-opening-decisioning
-      - name: data-marketing
-      - name: avant-ios
-      - name: central_ci
       - name: avant-data-gitops
-      - name: darwin
-      - name: avant-vault-ops
-      - name: backend-utils
-      - name: amount-de-airflow-utils
-      - name: garden-jobs-servicing
-      - name: ads-applications-dlds-datasets
+      - name: avant-docker-ops
+      - name: Avant-Campaign-Management
+      - name: ab_actions
+      - name: account-opening-decisioning
+      - name: accounting-garden
+      - name: ads-applications-campaign-liquibase
       - name: ads-applications-dlds-common
-      - name: avant-data-platform-testing
+      - name: ads-applications-dlds-datasets
+      - name: ads-dlds-campaign-airflow
+      - name: amount-credit-card-api
       - name: amount-dc-etl
+      - name: amount-de-airflow-utils
+      - name: amount-fdr_gateway
+      - name: avant-api-stubs
+      - name: avant-basic
+      - name: avant-basic-ecosystem-releases
+      - name: avant-data-platform-testing
+      - name: avant-global-campaign
+      - name: avant-ios
+      - name: avant-vault-ops
+      - name: avant_garden_risk_decisioning
+      - name: backend-utils
+      - name: campaign-common-utils
+      - name: central_ci
+      - name: core-ledger
+      - name: darwin
+      - name: data-collections
+      - name: data-management
+      - name: data-marketing
+      - name: garden-jobs-servicing
+      - name: mle-training
+      - name: partners-modules
+      - name: risk-ops
+      - name: tapestry
   tasks:
     - name: Clone Repositories
       git:
         repo: "{{ base_url + item.name }}.git"
         dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
         clone: yes
-        depth: 1
-        recursive: no
+        depth: 2
+        recursive: yes
       loop: "{{ repositories }}"
