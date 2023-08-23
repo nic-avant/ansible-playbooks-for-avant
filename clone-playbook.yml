@@ -24,6 +24,7 @@
       - name: avant-data-platform-testing
       - name: avant-global-campaign
       - name: avant-ios
+      - name: airflow-eks-partner01-dev
       - name: avant-vault-ops
       - name: avant_garden_risk_decisioning
       - name: backend-utils
@@ -39,12 +40,14 @@
       - name: partners-modules
       - name: risk-ops
       - name: tapestry
+      - name: dbt-daily
+      - name: data-platform-github-workflows
+      - name: helm-charts
   tasks:
     - name: Clone Repositories
       git:
         repo: "{{ base_url + item.name }}.git"
         dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
         clone: yes
-        depth: 2
         recursive: yes
       loop: "{{ repositories }}"
