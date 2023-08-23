@@ -43,6 +43,7 @@
       - name: dbt-daily
       - name: data-platform-github-workflows
       - name: helm-charts
+      - name: dcetl
   tasks:
     - name: Clone Repositories
       git:
