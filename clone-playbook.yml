@@ -44,6 +44,7 @@
       - name: data-platform-github-workflows
       - name: helm-charts
       - name: dcetl
+      - name: amount-data-lake-tools
   tasks:
     - name: Clone Repositories
       git:
