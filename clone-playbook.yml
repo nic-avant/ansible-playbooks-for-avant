@@ -45,6 +45,8 @@
       - name: helm-charts
       - name: dcetl
       - name: amount-data-lake-tools
+      - name: dbt-gold
+      - name: dbt-silver
   tasks:
     - name: Clone Repositories
       git:
