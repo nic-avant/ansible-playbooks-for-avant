@@ -3,9 +3,6 @@
   vars:
     base_url: "https://github.com/AvantFinCo/"
     repositories:
-      - name: avant-campaign
-      - name: avant-data-gitops
-      - name: avant-docker-ops
       - name: Avant-Campaign-Management
       - name: ab_actions
       - name: account-opening-decisioning
@@ -14,17 +11,24 @@
       - name: ads-applications-dlds-common
       - name: ads-applications-dlds-datasets
       - name: ads-dlds-campaign-airflow
+      - name: airflow-eks-partner01-dev
+      - name: airflow-eks-partner01-prod
+      - name: airflow-eks-partner01-uat
       - name: amount-credit-card-api
+      - name: amount-data-lake-tools
       - name: amount-dc-etl
       - name: amount-de-airflow-utils
       - name: amount-fdr_gateway
       - name: avant-api-stubs
+      - name: avant-aws-lambda
       - name: avant-basic
       - name: avant-basic-ecosystem-releases
+      - name: avant-campaign
+      - name: avant-data-gitops
       - name: avant-data-platform-testing
+      - name: avant-docker-ops
       - name: avant-global-campaign
       - name: avant-ios
-      - name: airflow-eks-partner01-dev
       - name: avant-vault-ops
       - name: avant_garden_risk_decisioning
       - name: backend-utils
@@ -35,18 +39,19 @@
       - name: data-collections
       - name: data-management
       - name: data-marketing
+      - name: data-partner01-dev
+      - name: data-platform-github-workflows
+      - name: dbt-daily
+      - name: dbt-gold
+      - name: dbt-silver
+      - name: dcetl
       - name: garden-jobs-servicing
+      - name: helm-charts
       - name: mle-training
       - name: partners-modules
       - name: risk-ops
       - name: tapestry
-      - name: dbt-daily
-      - name: data-platform-github-workflows
-      - name: helm-charts
-      - name: dcetl
-      - name: amount-data-lake-tools
-      - name: dbt-gold
-      - name: dbt-silver
+      - name: terraform-argocd-airflow
   tasks:
     - name: Clone Repositories
       git:
