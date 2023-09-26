@@ -3,6 +3,10 @@
   vars:
     base_url: "https://github.com/AvantFinCo/"
     repositories:
+      - name: ingestion-pipeline-verifications
+      - name: data-ingestion-framework
+      - name: data-partner01-uat
+      - name: data-partner01-prd
       - name: Avant-Campaign-Management
       - name: ab_actions
       - name: account-opening-decisioning
