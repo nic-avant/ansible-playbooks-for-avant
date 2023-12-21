@@ -1,12 +1,9 @@
+---
 - name: Clone Repos
   hosts: localhost
   vars:
-    base_url: "https://github.com/AvantFinCo/"
+    base_url: https://github.com/AvantFinCo/
     repositories:
-      - name: ingestion-pipeline-verifications
-      - name: data-ingestion-framework
-      - name: data-partner01-uat
-      - name: data-partner01-prd
       - name: Avant-Campaign-Management
       - name: ab_actions
       - name: account-opening-decisioning
@@ -23,16 +20,21 @@
       - name: amount-dc-etl
       - name: amount-de-airflow-utils
       - name: amount-fdr_gateway
+      - name: application-monitoring
       - name: avant-api-stubs
       - name: avant-aws-lambda
+      - name: avant-aws-sso
       - name: avant-basic
       - name: avant-basic-ecosystem-releases
       - name: avant-campaign
       - name: avant-data-gitops
       - name: avant-data-platform-testing
+      - name: avant-data-platform-testing
       - name: avant-docker-ops
       - name: avant-global-campaign
       - name: avant-ios
+      - name: avant-ops
+      - name: avant-spacelift-ops
       - name: avant-vault-ops
       - name: avant_garden_risk_decisioning
       - name: backend-utils
@@ -41,26 +43,37 @@
       - name: core-ledger
       - name: darwin
       - name: data-collections
+      - name: data-dag-tools
+      - name: data-databricks-notebooks
+      - name: data-ingestion-framework
       - name: data-management
       - name: data-marketing
       - name: data-partner01-dev
+      - name: data-partner01-prd
+      - name: data-partner01-uat
       - name: data-platform-github-workflows
-      - name: dbt-daily
       - name: dbt-gold
       - name: dbt-silver
+      - name: dbt_daily
       - name: dcetl
       - name: garden-jobs-servicing
+      - name: global-dev
       - name: helm-charts
+      - name: ingestion-pipeline-template
+      - name: ingestion-pipeline-verifications
+      - name: ingestion_pipeline_bar
       - name: mle-training
       - name: partners-modules
       - name: risk-ops
+      - name: slice
+      - name: syncsort-ops
       - name: tapestry
       - name: terraform-argocd-airflow
   tasks:
     - name: Clone Repositories
       git:
-        repo: "{{ base_url + item.name }}.git"
+        repo: '{{ base_url + item.name }}.git'
         dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
-        clone: yes
-        recursive: yes
-      loop: "{{ repositories }}"
+        clone: true
+        recursive: true
+      loop: '{{ repositories }}'
