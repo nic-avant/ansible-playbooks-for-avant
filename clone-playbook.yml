@@ -29,7 +29,6 @@
     - name: avant-campaign
     - name: avant-data-gitops
     - name: avant-data-platform-testing
-    - name: avant-data-platform-testing
     - name: avant-docker-ops
     - name: avant-ephemeral-basic
     - name: avant-global-campaign
@@ -76,7 +75,6 @@
     - name: terraform-argocd-dremio
     - name: terraform-aws-datadog-forwader
     - name: terraform-aws-eks
-    - name: terraform-aws-ingestion
     - name: terraform-aws-ingestion
     - name: terraform-aws-s3
   tasks:
