@@ -3,6 +3,10 @@
   vars:
     base_url: https://github.com/AvantFinCo/
     repositories:
+    - name: terraform-databricks-workspace
+    - name: airflow-eks-pci-uat
+    - name: airflow-eks-pci-prd
+    - name: data-partner01-shared
     - name: Avant-Campaign-Management
     - name: ab_actions
     - name: account-opening-decisioning
