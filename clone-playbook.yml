@@ -2,12 +2,12 @@
   hosts: localhost
   vars:
     # in ~/.ssh/config
-    # Host github.com-avant
+    # Host github-avant
     #   Hostname github.com
     #   AddKeysToAgent yes
     #   IdentityFile ~/.ssh/id_ed25519
     #   IdentitiesOnly yes
-    base_url: git@github.com-avant:AvantFinCo/
+    base_url: git@github-avant:AvantFinCo/
     repositories:
       - name: terraform-databricks-workspace
       - name: airflow-eks-pci-uat

@@ -2,23 +2,23 @@
   hosts: localhost
   tasks:
     # in ~/.ssh/config
-    # Host github.com-avant
+    # Host github-avant
     #   Hostname github.com
     #   AddKeysToAgent yes
     #   IdentityFile ~/.ssh/id_ed25519
     #   IdentitiesOnly yes
     - name: Clone jira tickets
       git:
-        repo: git@github.com-avant/nic-avant/jira-tickets.git
+        repo: git@github-avant/nic-avant/jira-tickets.git
         dest: "{{ lookup('env', 'HOME') }}/work/jira-tickets"
         clone: true
     - name: Clone MacOS MOTD
       git:
-        repo: git@github.com-avant/nic-avant/.macos-motd.git
+        repo: git@github-avant/nic-avant/.macos-motd.git
         dest: "{{ lookup('env', 'HOME') }}/.macos-motd"
         clone: true
     - name: Clone dotfiles
       git:
-        repo: git@github.com-pypeaday/pypeaday/dotfiles.git
+        repo: git@github-pypeaday/pypeaday/dotfiles.git
         dest: "{{ lookup('env', 'HOME') }}/dotfiles"
         clone: true

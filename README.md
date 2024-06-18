@@ -14,7 +14,7 @@ Host github-pypeaday
   AddKeysToAgent yes
   IdentityFile ~/.ssh/pypeaday_github
   IdentitiesOnly yes
-Host github.com-avant
+Host github-avant
   Hostname github.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
