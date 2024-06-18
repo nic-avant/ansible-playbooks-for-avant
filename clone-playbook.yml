@@ -12,7 +12,6 @@
       - name: terraform-databricks-workspace
       - name: airflow-eks-pci-uat
       - name: airflow-eks-pci-prd
-      - name: data-partner01-shared
       - name: Avant-Campaign-Management
       - name: ab_actions
       - name: account-opening-decisioning
@@ -42,8 +41,6 @@
       - name: avant-docker-ops
       - name: avant-ephemeral-basic
       - name: avant-global-campaign
-      - name: avant-ios
-      - name: avant-ops
       - name: avant-spacelift-ops
       - name: avant-vault-ops
       - name: avant_garden_risk_decisioning
