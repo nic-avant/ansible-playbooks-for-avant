@@ -1,18 +1,24 @@
 - name: Clone Personal Things
   hosts: localhost
   tasks:
-  - name: Clone jira tickets
-    git:
-      repo: https://github.com/nic-avant/jira-tickets.git
-      dest: "{{ lookup('env', 'HOME') }}/work/jira-tickets"
-      clone: true
-  - name: Clone MacOS MOTD
-    git:
-      repo: https://github.com/nic-avant/.macos-motd.git
-      dest: "{{ lookup('env', 'HOME') }}/.macos-motd"
-      clone: true
-  - name: Clone dotfiles
-    git:
-      repo: https://github.com/pypeaday/dotfiles.git
-      dest: "{{ lookup('env', 'HOME') }}/dotfiles"
-      clone: true
+    # in ~/.ssh/config
+    # Host github.com-avant
+    #   Hostname github.com
+    #   AddKeysToAgent yes
+    #   IdentityFile ~/.ssh/id_ed25519
+    #   IdentitiesOnly yes
+    - name: Clone jira tickets
+      git:
+        repo: git@github.com-avant/nic-avant/jira-tickets.git
+        dest: "{{ lookup('env', 'HOME') }}/work/jira-tickets"
+        clone: true
+    - name: Clone MacOS MOTD
+      git:
+        repo: git@github.com-avant/nic-avant/.macos-motd.git
+        dest: "{{ lookup('env', 'HOME') }}/.macos-motd"
+        clone: true
+    - name: Clone dotfiles
+      git:
+        repo: git@github.com-pypeaday/pypeaday/dotfiles.git
+        dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+        clone: true

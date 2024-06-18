@@ -1,91 +1,97 @@
 - name: Clone Repos
   hosts: localhost
   vars:
-    base_url: https://github.com/AvantFinCo/
+    # in ~/.ssh/config
+    # Host github.com-avant
+    #   Hostname github.com
+    #   AddKeysToAgent yes
+    #   IdentityFile ~/.ssh/id_ed25519
+    #   IdentitiesOnly yes
+    base_url: git@github.com-avant:AvantFinCo/
     repositories:
-    - name: terraform-databricks-workspace
-    - name: airflow-eks-pci-uat
-    - name: airflow-eks-pci-prd
-    - name: data-partner01-shared
-    - name: Avant-Campaign-Management
-    - name: ab_actions
-    - name: account-opening-decisioning
-    - name: accounting-garden
-    - name: ads-applications-campaign-liquibase
-    - name: ads-applications-dlds-common
-    - name: ads-applications-dlds-datasets
-    - name: ads-dlds-campaign-airflow
-    - name: airflow-eks-partner01-dev
-    - name: airflow-eks-partner01-prod
-    - name: airflow-eks-partner01-uat
-    - name: amount-credit-card-api
-    - name: amount-data-lake-tools
-    - name: amount-dc-etl
-    - name: amount-de-airflow-utils
-    - name: amount-fdr_gateway
-    - name: application-monitoring
-    - name: avant-api-stubs
-    - name: avant-artifactory-ops
-    - name: avant-aws-lambda
-    - name: avant-aws-sso
-    - name: avant-basic
-    - name: avant-basic-ecosystem-releases
-    - name: avant-campaign
-    - name: avant-data-gitops
-    - name: avant-data-platform-testing
-    - name: avant-docker-ops
-    - name: avant-ephemeral-basic
-    - name: avant-global-campaign
-    - name: avant-ios
-    - name: avant-ops
-    - name: avant-spacelift-ops
-    - name: avant-vault-ops
-    - name: avant_garden_risk_decisioning
-    - name: backend-utils
-    - name: campaign-common-utils
-    - name: central_ci
-    - name: core-ledger
-    - name: darwin
-    - name: data-collections
-    - name: data-dag-tools
-    - name: data-databricks-notebooks
-    - name: data-ingestion-framework
-    - name: data-management
-    - name: data-marketing
-    - name: data-partner01-dev
-    - name: data-partner01-prd
-    - name: data-partner01-uat
-    - name: data-platform-github-workflows
-    - name: dbt-gold
-    - name: dbt-silver
-    - name: dbt_daily
-    - name: dcetl
-    - name: garden-jobs-servicing
-    - name: global-dev
-    - name: global-services
-    - name: helm-charts
-    - name: ingestion-pipeline-template
-    - name: ingestion-pipeline-verifications
-    - name: ingestion_pipeline_bar
-    - name: mle-training
-    - name: partners-modules
-    - name: pci-partner01-prd
-    - name: pci-partner01-uat
-    - name: risk-ops
-    - name: slice
-    - name: syncsort-ops
-    - name: tapestry
-    - name: terraform-argocd-airflow
-    - name: terraform-argocd-dremio
-    - name: terraform-aws-datadog-forwader
-    - name: terraform-aws-eks
-    - name: terraform-aws-ingestion
-    - name: terraform-aws-s3
+      - name: terraform-databricks-workspace
+      - name: airflow-eks-pci-uat
+      - name: airflow-eks-pci-prd
+      - name: data-partner01-shared
+      - name: Avant-Campaign-Management
+      - name: ab_actions
+      - name: account-opening-decisioning
+      - name: accounting-garden
+      - name: ads-applications-campaign-liquibase
+      - name: ads-applications-dlds-common
+      - name: ads-applications-dlds-datasets
+      - name: ads-dlds-campaign-airflow
+      - name: airflow-eks-partner01-dev
+      - name: airflow-eks-partner01-prod
+      - name: airflow-eks-partner01-uat
+      - name: amount-credit-card-api
+      - name: amount-data-lake-tools
+      - name: amount-dc-etl
+      - name: amount-de-airflow-utils
+      - name: amount-fdr_gateway
+      - name: application-monitoring
+      - name: avant-api-stubs
+      - name: avant-artifactory-ops
+      - name: avant-aws-lambda
+      - name: avant-aws-sso
+      - name: avant-basic
+      - name: avant-basic-ecosystem-releases
+      - name: avant-campaign
+      - name: avant-data-gitops
+      - name: avant-data-platform-testing
+      - name: avant-docker-ops
+      - name: avant-ephemeral-basic
+      - name: avant-global-campaign
+      - name: avant-ios
+      - name: avant-ops
+      - name: avant-spacelift-ops
+      - name: avant-vault-ops
+      - name: avant_garden_risk_decisioning
+      - name: backend-utils
+      - name: campaign-common-utils
+      - name: central_ci
+      - name: core-ledger
+      - name: darwin
+      - name: data-collections
+      - name: data-dag-tools
+      - name: data-databricks-notebooks
+      - name: data-ingestion-framework
+      - name: data-management
+      - name: data-marketing
+      - name: data-partner01-dev
+      - name: data-partner01-prd
+      - name: data-partner01-uat
+      - name: data-platform-github-workflows
+      - name: dbt-gold
+      - name: dbt-silver
+      - name: dbt_daily
+      - name: dcetl
+      - name: garden-jobs-servicing
+      - name: global-dev
+      - name: global-services
+      - name: helm-charts
+      - name: ingestion-pipeline-template
+      - name: ingestion-pipeline-verifications
+      - name: ingestion_pipeline_bar
+      - name: mle-training
+      - name: partners-modules
+      - name: pci-partner01-prd
+      - name: pci-partner01-uat
+      - name: risk-ops
+      - name: slice
+      - name: syncsort-ops
+      - name: tapestry
+      - name: terraform-argocd-airflow
+      - name: terraform-argocd-dremio
+      - name: terraform-aws-datadog-forwader
+      - name: terraform-aws-eks
+      - name: terraform-aws-ingestion
+      - name: terraform-aws-s3
   tasks:
-  - name: Clone Repositories
-    git:
-      repo: "{{ base_url + item.name }}.git"
-      dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
-      clone: true
-      recursive: true
-    loop: "{{ repositories }}"
+    - name: Clone Repositories
+      git:
+        repo: "{{ base_url + item.name }}.git"
+        dest: "{{ lookup('env', 'HOME') }}/work/{{ item.name  }}"
+        clone: true
+        recursive: true
+      loop: "{{ repositories }}"
